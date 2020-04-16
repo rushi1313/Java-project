@@ -1,0 +1,7 @@
+class codingheist()
+{
+    public static void main(String args[])
+    {
+        System.out.println("Gates is real professor");//mala moaney heist kahich mahiti nayyye taripan..
+    }
+}
