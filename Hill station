@@ -1,0 +1,189 @@
+import java.util.Scanner; 
+/*class Beach
+{
+
+	
+}*/
+//	Hierarchical Inheritance : "is-a" relationship
+abstract class Tourist
+{
+	protected long mId, mPhoneNo, mIdentiyProof, mCountryCode;
+	protected String mName, mCity;
+	
+	public Tourist()
+	{
+		mId = -1;
+		mPhoneNo = -1;
+		mIdentiyProof = -1;
+		mCountryCode = -1;
+	}
+	
+	public Tourist(long pn, long ip, long cc, String nm, String add)
+	{
+		mPhoneNo = pn;
+		mIdentiyProof = ip;
+		mCountryCode = cc;
+		mName = nm;
+		mCity = add;
+	}
+	
+	abstract public void mExpenses();	
+}
+class MiddleClassMen extends Tourist
+{
+	private int mPrice, mNoDays, mNoRooms, mEatables;
+	String option;
+	Scanner input = new Scanner(System.in);
+	Scanner inputst = new Scanner(System.in);
+	MiddleClassMen(){}
+	MiddleClassMen(long pn, long ip, long cc, String nm, String add)
+	{
+		super(pn, ip, cc, nm, add);
+	}
+	public void mExpenses()
+	{
+		System.out.println("Which rooms will you prefer for stay ?\nThe rents are 1200, 1300, 1500, 1700, 11000 per night.");
+		mPrice = input.nextInt();
+		System.out.println("Enter the number of rooms and days : ");
+		mNoRooms = input.nextInt();
+		mNoDays = input.nextInt();
+		mPrice = mPrice * mNoRooms * mNoDays;
+		System.out.println("Will you prefer lunch at our hotel ? (yes/no)");
+		option = inputst.nextLine();
+		if(option.equals("yes"))
+		{
+			System.out.println("Menu is as follows :\n1.Breakfast\t500/-\n2.Lunch\t\t700/-\n3.Dinner\t900/-\n4.Special Thali\t1200/-\n");
+			mEatables = input.nextInt();
+			mPrice = mPrice + mEatables;
+		}
+		else
+		{
+			System.out.println("At night you need to be back before 11:45 pm (strictly) otherwise entry will not be permitted.");
+		}
+		System.out.println("Wifi Services are availaible will you like to grab it just at 100/- unlimited (5mbps speed) ? (1 (yes) / 0 (no) )");
+		mEatables = input.nextInt();
+		if(mEatables == 1)
+		mPrice = mPrice + 100; 
+	}
+}
+class HigherClassMen extends Tourist
+{
+	HigherClassMen(){}
+	HigherClassMen(long pn, long ip, long cc, String nm, String add)
+	{
+		super(pn, ip, cc, nm, add);
+	}
+	public void mExpenses()
+	{
+		
+	}
+}
+public class TestTourism {
+
+	public static void main(String[] args) 
+	{
+		Tourist obj;
+		int temp = 1, choice;
+		String nm, ct;
+		long pn, ip, cc;
+		Scanner input = new Scanner(System.in);
+		Scanner inputnm = new Scanner(System.in);
+		Scanner inputln = new Scanner(System.in);
+		System.out.print("Enter your name : ");
+		nm = inputnm.nextLine();
+		System.out.print("Enter your city : ");
+		ct = inputnm.nextLine();
+		System.out.print("Enter your phone number : ");
+		pn = inputln.nextLong();
+		System.out.print("Enter your adhaar / pan / licese number : ");
+		ip = inputln.nextLong();
+		System.out.print("Enter your country code : ");
+		cc = inputln.nextLong();
+		obj = new MiddleClassMen(pn, ip, cc, nm, ct);
+		while(temp == 1)
+		{
+			System.out.print("1.Beaches\n2.Historical places\n3.Hill Stations\nEnter the place you want to visit : ");
+			choice = input.nextInt();
+			switch(choice)
+			{
+				case 1 :
+					break;
+				case 2 :
+					break;
+				case 3 :
+					break;
+				default :
+					System.out.println("You have entered the wrong choice number.");
+			}
+			obj.mExpenses();
+			System.out.print("Enter 1/0 for continue/discontinue : ");
+			temp = input.nextInt();
+		}
+	}
+}
+class Historicalplace
+{
+	Historicalplace(){
+
+	}
+	public void Historicalplace(){
+	int cprice=1500;
+	int mqu,cs,m;
+		System.out.println("would you like to buy the costumes?if you want then press 1");
+		Scanner input = new Scanner(System.in);
+		m=input.nextInt();
+		if(m==1)
+		{
+			System.out.println("to buy costume for men press 1 and for ladies press 2");
+			cs=input.nextInt();
+			if(cs==1)
+			{
+				System.out.println("Price for Mens costume is 1500.");
+				System.out.println("how many costumes you want to buy");
+				mqu=input.nextInt();
+				cprice=cprice*mqu;
+				System.out.println("your total cost is"+cprice);
+			}
+			else
+			{
+				System.out.println("out of stock!!hahaha we dont sell products to gaals hahahaha");
+			}
+		}
+
+	}
+
+}
+class Hillstaion
+{
+	public void Hillstaion()
+	{
+		int check ,thr,tdp;
+		int hp=300;
+		int dp=800;
+		System.out.println("Would you like to take horse ride and price per head is 300 rupees..If yes press 1");
+		System.out.println("would you like to buy dryfruits price is 800 rupees per Kg/n..");
+		System.out.println("If you want to buy dryfruits  then press 2");
+		Scanner input = new Scanner(System.in);
+		check=input.nextInt();
+		if(check==1)
+		{
+			System.out.println("TOTAL NO OF PEOPLE WANT TO TAKE HORSE RIDE?");
+			thr=input.nextInt();
+			hp=input.nextInt();
+			hp=hp*thr;
+			System.out.println("total cost for horse riding is="+hp);
+
+		}
+		else
+		{
+			System.out.println("how many kilos you want to buy ?");
+			tdp=input.nextInt();
+			dp=input.nextInt();
+			dp=dp*tdp;
+			System.out.println("total price for dryfruits is"+dp);
+		}
+
+		
+
+	}
+} 
