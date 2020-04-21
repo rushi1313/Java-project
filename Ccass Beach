@@ -1,0 +1,44 @@
+import java.util.Scanner; 
+class Beach
+{
+	void getdata()
+	{
+		int ch,temp=1,people, mboating=0,mbananaride=0,mscubadiving=0,tboating=0,tbanana=0,tscuba=0,Totalbeach=0;
+		Scanner input = new Scanner(System.in);
+		Scanner inputst = new Scanner(System.in);
+		while(temp)
+		{
+			System.out.println("Welcome to the Beach Resort\nEnter your choice\n1.Boating-500 per person\2.Banana ride 400 per person\n.3.Scuba Diving 1000 per person\n");
+			ch=input.nextInt();
+			switch(ch)
+			{
+				case 1:
+				{
+					System.out.println("Enter no of people");
+					people=input.nextInt();
+					mboating=500*people;
+					tboating=tboating+mboating;
+					break;
+				}
+				case 2:
+				{
+					System.out.println("Enter no of people");
+					people=input.nextInt();
+					mbananaride=400*people;
+					tbanana=tbanana+mbananaride;
+					break;
+				}
+				case 3:
+				{
+					System.out.println("Enter no of people");
+					people=input.nextInt();
+					mscubadiving=1000*people;
+					tscuba=tscuba+mscubadiving;
+					break;
+				}
+			}
+			System.out.println("Press 1- Continue\nPress 0-Stop\n");
+			temp=input.nextInt();
+		}
+		Totalbeach=tboating+tbanana+tscuba;
+}
