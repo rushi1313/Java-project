@@ -14,7 +14,7 @@ class Beach
 			{
 				case 1:
 				{
-					System.out.println("Enter no of people");
+					System.out.println("Enter number of people");
 					people=input.nextInt();
 					mboating=500*people;
 					tboating=tboating+mboating;
