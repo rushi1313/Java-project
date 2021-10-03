@@ -1,6 +1,6 @@
 #include<iostream>
 int main()
 {
-	cout << "Rushi the bloogger";
+	cout << "Rushi the ace bloogger";
 	return 0;
 }
